@@ -44,4 +44,12 @@ invalid.forEach(function (e) {
   })
 })
 
-
+//test that check passes the output of `nearley-unparse ./multiserver.ne -n 100`
+var random = require('fs').readFileSync(__dirname+'/random.txt', 'utf8').split('\n')
+tape('can check randomly generated data', function (t) {
+  random.forEach(function (e) {
+    if(e != '')
+      t.ok(ma.check(e), 'should check:'+JSON.stringify(e))
+  })
+  t.end()
+})

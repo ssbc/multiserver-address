@@ -5,12 +5,12 @@ define valid [multiserver](https://github.com/ssbc/multiserver) addresses
 format is:
 
 ```
-name = [a-z][a-z0-9\-]+           //name may contain lower case, digits, and -. must start with lower case.
+name = [a-z] [a-z0-9\-]+           //name may contain lower case, digits, and -. must start with lower case.
 escaped = ![!:;~]                 //special characters !:;~ may be escaped with !
-data = [!-9]|[<-}]|escaped        //data field may contain any non-space character, but special characters must be escaped.
-protocol = name(:data)*           //a protocol is a name and zero or more data elements
-address = protocol(~protocol)*    //an address is 1 or more protocols
-multiaddress = address(;address)* //a multiaddress is 1 or more addresses!
+data = ["-9] | [<-}] | escaped        //data field may contain any non-space character, but special characters must be escaped.
+protocol = name (:data)*           //a protocol is a name and zero or more data elements
+address = protocol (~ protocol )*    //an address is 1 or more protocols
+multiaddress = address (; address )* //a multiaddress is 1 or more addresses!
 ```
 
 ## api

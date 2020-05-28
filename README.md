@@ -13,6 +13,15 @@ address = protocol (~ protocol )*    //an address is 1 or more protocols
 multiaddress = address (; address )* //a multiaddress is 1 or more addresses!
 ```
 
+## Examples
+
+```
+net:wx.larpa.net:8008~shs:DTNmX+4SjsgZ7xyDh5xxmNtFqa6pWi5Qtw7cE8aR9TQ=
+wss://wx.larpa.net~shs:DTNmX+4SjsgZ7xyDh5xxmNtFqa6pWi5Qtw7cE8aR9TQ=
+```
+
+Please note that both ws:// and ws: are valid multiserver addresses.
+
 ## api
 
 follows the pattern of level [codec](https://github.com/level/codec#encoding-format)
